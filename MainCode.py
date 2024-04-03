@@ -1,6 +1,6 @@
 ##################################################################################
 # Project: Sensory Piano
-# Group Members: Justus Blanchard, Grayson Lessard, Alayna ?, Zachary Truxillo
+# Group Members: Justus Blanchard, Grayson Lessard, Alayna Fields, Zachary Truxillo
 ##################################################################################
 ### SETUP ###
 import pygame
