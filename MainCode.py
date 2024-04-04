@@ -7,6 +7,5 @@ import pygame
 # import piano
 
 
-#hello world
 ### MAIN ###
 # Code
