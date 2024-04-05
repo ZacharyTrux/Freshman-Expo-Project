@@ -20,7 +20,7 @@ class StartScreen(FloatLayout):
             
 class SensoryPianoApp(App):
     def build(self):
-        #$sm = ScreenManager()
+        #sm = ScreenManager()
         #sm.add_widget(StartScreen(name='StartScreen'))
         #sm.add_widget(ActualScreen(name="ActualScreen"))
         
