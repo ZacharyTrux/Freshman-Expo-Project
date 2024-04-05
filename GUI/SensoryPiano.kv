@@ -22,12 +22,16 @@ WindowManager:
             color: 0,0,0,1
                 
         Button:
-            size: 200, 200  
+            #size: 200, 200  
             size_hint: 0.3,0.1
             pos_hint: {"center_x":0.5,"top":0.45}
-            background_normal: 'power_button.png'  
-            background_down: 'power_button.png'
-            on_release: root.manager.current = "second"
+            Image: 
+                source: 'power_button.png'
+                center_x: self.parent.center_x
+                center_y: self.parent.center_y
+            #background_normal: 'GUI/power_button.png'  
+            #background_down: 'GUI/power_button.png'
+            #on_release: root.manager.current = "second"
         
 
 <ActualWindow>
