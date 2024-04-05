@@ -1,25 +1,24 @@
+<Button>:
+    font_size: 40
+    color: 1,1,1,1
+
 <StartScreen>
-    GridLayout:
-        cols:1
-        size: root.width,root.height
+
+<FloatLayout>
+    Label:
+        pos_hint: {'center_x':0.5,'top':1.2}
+        font_size: 100
         
-        GridLayout:
-            rows: 1
-            cols: 1
-            Label:
-                text:"Sensory Piano!"
-                font_size: 50
-                background_color: (1,1,1,1)
-                canvas.before:
-                    Color:
-                        rgba: self.background_color
-                    Rectangle:
-                        size: self.size
-                        pos: self.pos
-                # Text properties
-                color:0,0,0,0
-        Button:
-            font_size: 50
-            text:"Begin?"
-            backgorund_color: (0,0,1,1)
+        text: "Sensory Piano!"
+
             
+    Button:
+        size_hint: 0.4,0.3
+        pos_hint: {"center_x":0.5,"top":0.55}
+        text: "Start"
+
+#<ActualScreen>:
+ #   Button:
+  #      text: "Start"
+   #     on_press: root.manager.current = 'StartScreen'
+        
