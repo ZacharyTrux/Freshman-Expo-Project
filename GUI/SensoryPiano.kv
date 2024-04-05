@@ -1,6 +1,12 @@
 <Button>:
     font_size: 40
 
+#<ImageButton>:
+#    size_hint: None, None
+#    size: 200, 200  
+#    background_normal: 'power_button.png'  
+#    background_down: 'power_button.png'
+
 WindowManager:
     StartScreen:
     ActualWindow:
@@ -12,20 +18,21 @@ WindowManager:
         Label:
             pos_hint: {'center_x':0.5,'top':1.2}
             font_size: 100
-            
             text: "Sensory Piano!"
+            color: 0,0,0,1
                 
         Button:
+            size: 200, 200  
             size_hint: 0.3,0.1
             pos_hint: {"center_x":0.5,"top":0.45}
-            text: "Start"
-            on_release: 
-                app.root.current = "second"
+            background_normal: 'power_button.png'  
+            background_down: 'power_button.png'
+            on_release: root.manager.current = "second"
+        
 
 <ActualWindow>
     name: "second"
     FloatLayout:
         Button: 
             text: "Go Back"
-            on_release: 
-                app.root.current = "start"
+            on_release: root.manager.current = "start"

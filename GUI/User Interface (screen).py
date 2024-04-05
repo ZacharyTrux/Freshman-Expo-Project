@@ -1,9 +1,5 @@
 import kivy
 from kivy.app import App
-from kivy.uix.widget import Widget
-from kivy.uix.label import Label
-from kivy.uix.floatlayout import FloatLayout
-from kivy.uix.button import ButtonBehavior
 from kivy.core.window import Window
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.lang import Builder
@@ -19,13 +15,12 @@ class ActualWindow(Screen):
     
 class WindowManager(ScreenManager):
     pass
-
-        
-kv = Builder.load_file("SensoryPiano.kv")      
+          
             
 class SensoryPianoApp(App):
     def build(self):
-        #Window.clearcolor = (1,1,1,1)
+        Window.clearcolor = (1,1,1,1)
+        kv = Builder.load_file("SensoryPiano.kv") 
         return kv
     
 
