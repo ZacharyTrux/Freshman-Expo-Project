@@ -1,23 +1,31 @@
 <Button>:
     font_size: 40
-    color: 1,1,1,1
 
-<StartScreen>
-
-<FloatLayout>
-    Label:
-        pos_hint: {'center_x':0.5,'top':1.2}
-        font_size: 100
+WindowManager:
+    StartScreen:
+    ActualWindow:
         
-        text: "Sensory Piano!"
+
+<StartScreen>:
+    name: "start"
+    FloatLayout:
+        Label:
+            pos_hint: {'center_x':0.5,'top':1.2}
+            font_size: 100
             
-    Button:
-        size_hint: 0.3,0.1
-        pos_hint: {"center_x":0.5,"top":0.45}
-        text: "Start"
+            text: "Sensory Piano!"
+                
+        Button:
+            size_hint: 0.3,0.1
+            pos_hint: {"center_x":0.5,"top":0.45}
+            text: "Start"
+            on_release: 
+                app.root.current = "second"
 
-#<ActualScreen>:
- #   Button:
-  #      text: "Start"
-   #     on_press: root.manager.current = 'StartScreen'
-        
+<ActualWindow>
+    name: "second"
+    FloatLayout:
+        Button: 
+            text: "Go Back"
+            on_release: 
+                app.root.current = "start"
