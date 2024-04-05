@@ -1,0 +1,30 @@
+<StartScreen>
+    GridLayout:
+        cols:1
+        size: root.width,root.height
+        
+        GridLayout:
+            rows: 1
+            cols: 1
+            Label:
+                text:"Sensory Piano!"
+                font_size: 50
+                background_color: (1,1,1,1)
+                canvas.before:
+                    Color:
+                        rgba: self.background_color
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                # Text properties
+                color:0,0,0,0
+        Button:
+            font_size: 50
+            text:"Begin?"
+            backgorund_color: (0,0,1,1)
+            canvas.before:
+                Color:
+                    rgba: self.background_color
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
