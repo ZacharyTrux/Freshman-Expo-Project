@@ -1,12 +1,6 @@
 <Button>:
     font_size: 40
 
-#<ImageButton>:
-#    size_hint: None, None
-#    size: 200, 200  
-#    background_normal: 'power_button.png'  
-#    background_down: 'power_button.png'
-
 WindowManager:
     StartScreen:
     ActualWindow:
@@ -22,21 +16,26 @@ WindowManager:
             color: 0,0,0,1
                 
         Button:
-            #size: 200, 200  
-            size_hint: 0.3,0.1
+            opacity: 0  
+            size_hint: 0.13,0.18
             pos_hint: {"center_x":0.5,"top":0.45}
-            Image: 
-                source: 'power_button.png'
-                center_x: self.parent.center_x
-                center_y: self.parent.center_y
-            #background_normal: 'GUI/power_button.png'  
-            #background_down: 'GUI/power_button.png'
-            #on_release: root.manager.current = "second"
+            on_release: root.manager.current = "second"
+        Image: 
+            source: 'power.png'
+            size_hint: 0.3,0.18
+            pos_hint:{"center_x":0.5,"top":0.45}
+            
         
 
 <ActualWindow>
     name: "second"
     FloatLayout:
         Button: 
-            text: "Go Back"
+            opacity: 0
+            size_hint: 0.1,0.1
+            pos_hint:{"center_x":0.035,"top":1}
             on_release: root.manager.current = "start"
+        Image:
+            source: 'Back.png'
+            size_hint: 0.1,0.1
+            pos_hint:{"center_x":0.035,"top":1}
