@@ -10,3 +10,4 @@ import pygame
 ### MAIN ###
 # Code
 def thisThing():
+    pass
