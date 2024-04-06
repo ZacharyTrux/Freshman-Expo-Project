@@ -25,6 +25,7 @@ class WindowManager(ScreenManager):
 class SensoryPianoApp(App):
     def build(self):
         Window.clearcolor = (1,1,1,1)
+        Window.size = (1024,600)
         kv = Builder.load_file("SensoryPiano.kv") 
         return kv
     

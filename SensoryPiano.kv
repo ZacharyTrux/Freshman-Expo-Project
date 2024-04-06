@@ -7,11 +7,20 @@ WindowManager:
         
 
 <StartScreen>:
+    canvas.before:
+        Color: 
+            rgba:(1,1,1,1)
+
+        Rectangle: 
+            source: "Background.png"
+            size: root.width,  root.height
+            pos: self.pos
+
     name: "start"
     FloatLayout:
         Label:
             pos_hint: {'center_x':0.5,'top':1.2}
-            font_size: 100
+            font_size: 90
             text: "Sensory Piano!"
             color: 0,0,0,1
                 
@@ -19,7 +28,9 @@ WindowManager:
             opacity: 0  
             size_hint: 0.13,0.18
             pos_hint: {"center_x":0.5,"top":0.45}
-            on_release: root.manager.current = "second"
+            on_release: 
+                root.manager.current = "second"
+                root.manager.transition.direction = 'left'
         Image: 
             source: 'power.png'
             size_hint: 0.3,0.18
@@ -34,7 +45,10 @@ WindowManager:
             opacity: 0
             size_hint: 0.1,0.1
             pos_hint:{"center_x":0.035,"top":1}
-            on_release: root.manager.current = "start"
+            on_release: 
+                root.manager.current = "start"
+                root.manager.transition.direction = 'right'
+            
         Image:
             source: 'Back.png'
             size_hint: 0.1,0.1
