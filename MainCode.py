@@ -11,8 +11,6 @@ from kivy.lang import Builder
 # import piano
 
 class StartScreen(Screen):
-    #in the event we need to have this for touch screen
-    #def on_touch_down(self,touch):
     pass
 
 class ActualWindow(Screen):
@@ -21,19 +19,16 @@ class ActualWindow(Screen):
 class WindowManager(ScreenManager):
     pass
           
-            
 class SensoryPianoApp(App):
     def build(self):
+        # Sets the background of the screen to White 
         Window.clearcolor = (1,1,1,1)
         Window.size = (1024,600)
+        # Loads the kv file which contains all of the buttons, labels, and functions (utilizes kivy lang)
         kv = Builder.load_file("SensoryPiano.kv") 
         return kv
     
-
 ### MAIN ###
-# Code
-def thisThing():
-    pass
-
+# Start the app(GUI)
 if __name__ == "__main__":
     SensoryPianoApp().run()
