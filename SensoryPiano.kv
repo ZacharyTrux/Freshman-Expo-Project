@@ -12,7 +12,7 @@ WindowManager:
             rgba:(1,1,1,1)
 
         Rectangle: 
-            source: "Background.png"
+            source: "InterfaceIcons/Background.png"
             size: root.width,  root.height
             pos: self.pos
 
@@ -32,7 +32,7 @@ WindowManager:
                 root.manager.current = "second"
                 root.manager.transition.direction = 'left'
         Image: 
-            source: 'power.png'
+            source: 'InterfaceIcons/power.png'
             size_hint: 0.3,0.18
             pos_hint:{"center_x":0.5,"top":0.45}
             
@@ -50,7 +50,7 @@ WindowManager:
                 root.manager.transition.direction = 'right'
             
         Image:
-            source: 'Back.png'
+            source: 'InterfaceIcons/Back.png'
             size_hint: 0.1,0.1
             pos_hint:{"center_x":0.035,"top":1}
 
