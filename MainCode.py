@@ -11,8 +11,6 @@ from kivy.lang import Builder
 # import piano
 
 class StartScreen(Screen):
-    #in the event we need to have this for touch screen
-    #def on_touch_down(self,touch):
     pass
 
 class ActualWindow(Screen):
@@ -21,7 +19,6 @@ class ActualWindow(Screen):
 class WindowManager(ScreenManager):
     pass
           
-            
 class SensoryPianoApp(App):
     def build(self):
         Window.clearcolor = (1,1,1,1)
