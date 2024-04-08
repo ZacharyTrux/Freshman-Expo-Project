@@ -28,9 +28,9 @@ class SensoryPianoApp(App):
         kv = Builder.load_file("SensoryPiano.kv") 
         return kv
     
-
 ### MAIN ###
 # Start the app(GUI)
 if __name__ == "__main__":
     SensoryPianoApp().run()
+    
 # Not balls
