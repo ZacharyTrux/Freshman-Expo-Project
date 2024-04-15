@@ -27,15 +27,16 @@ class SensoryPianoApp(App):
         # Loads the kv file which contains all of the buttons, labels, and functions (utilizes kivy lang)
         kv = Builder.load_file("SensoryPiano.kv") 
         
-        GPIO.setmode(GPIO.BCM)
-        button_pin = 18  # Change this to your button's GPIO pin
-        GPIO.setup(button_pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-        GPIO.add_event_detect(button_pin, GPIO.FALLING, \
-            callback=self.button_callback, bouncetime=300)
-        
+        # GPIO.setmode(GPIO.BCM)
+        # button_pin = 18  # Change this to your button's GPIO pin
+        # GPIO.setup(button_pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+        # GPIO.add_event_detect(button_pin, GPIO.FALLING, \
+        #     callback=self.button_callback, bouncetime=300)
+        window = self.root.get_screen("second")
+        window.ids.octave_text_label.text = "Button Pressed"
         return kv
     
-    def button_callback(self,channel):
+    def button_callback(self, channel):
         # updates label under notes and octave when pressed
         window = self.root.get_screen("second")
         window.ids.octave_text_label.text = "Button Pressed"

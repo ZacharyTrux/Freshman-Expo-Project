@@ -40,10 +40,10 @@ def on_press(key):
 
         print(f"Octave +{OCTAVE}")
 
-        noteDictValueList = ["C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B", "C"]
+        noteDictValueList = ["C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B", f"C{OCTAVE}"]
 
         dictValue = 0
-        while dictValue < 13:
+        while dictValue < 12:
             for dictKey in noteDictKeyList:
                 noteDict[dictKey] = noteDictValueList[dictValue] + f"{OCTAVE}"
                 dictValue += 1
@@ -56,17 +56,17 @@ def on_press(key):
 
         print(f"Octave +{OCTAVE}")
         
-        noteDictValueList = ["C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B", "C"]
+        noteDictValueList = ["C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B", f"C{OCTAVE}"]
 
         dictValue = 0
-        while dictValue < 13:
+        while dictValue < 12:
             for dictKey in noteDictKeyList:
                 noteDict[dictKey] = noteDictValueList[dictValue] + f"{OCTAVE}"
                 dictValue += 1
 
     elif input == "/":
         print(noteDict)
-        
+
 
     try:
         playsound(f'notes/{noteDict[input]}.wav', False)
