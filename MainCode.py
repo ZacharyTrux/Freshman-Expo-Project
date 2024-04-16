@@ -14,7 +14,10 @@ class StartScreen(Screen):
     pass
 
 class ActualWindow(Screen):
-    pass    
+    def __init__(self,**kwargs):
+        super().__init__(**kwargs)
+    #window = self.root.get_screen("second")
+           
     
 class WindowManager(ScreenManager):
     pass
@@ -32,8 +35,9 @@ class SensoryPianoApp(App):
         # GPIO.setup(button_pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
         # GPIO.add_event_detect(button_pin, GPIO.FALLING, \
         #     callback=self.button_callback, bouncetime=300)
-        window = self.root.get_screen("second")
-        window.ids.octave_text_label.text = "Button Pressed"
+        self.ActualWindow.ids['octave_text_label'] = "funny number"
+        actual_window = self.root.get_screen("second")
+        actual_window.ids.octave_text_label.text = "Funny number"
         return kv
     
     def button_callback(self, channel):
@@ -46,4 +50,5 @@ class SensoryPianoApp(App):
 # Start the app(GUI)
 if __name__ == "__main__":
     SensoryPianoApp().run()
+
     
