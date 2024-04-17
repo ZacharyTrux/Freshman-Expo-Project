@@ -15,7 +15,7 @@ noteDict = {"q": f"C{OCTAVE}",  "2": f"Db{OCTAVE}",
             "7": f"Bb{OCTAVE}", "u": f"B{OCTAVE}", 
             "i": f"C{OCTAVE + 1}"}
 
-noteDictKeyList = ["q", "2", "w", "3", "e", "r", "5", "t", "6", "y", "7", "u", "i"]
+noteDictKeyList = ["q", "2", "w", "3", "e", "r", "5", "t", "6", "y", "7", "u"]
 
 # Dictionary establishing the frequencies of their respective notes.
 frequencyDict = {f"C{OCTAVE}": 261.63, f"Db{OCTAVE}": 277.18, 
@@ -40,10 +40,10 @@ def on_press(key):
 
         print(f"Octave +{OCTAVE}")
 
-        noteDictValueList = ["C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B", f"C{OCTAVE}"]
+        noteDictValueList = ["C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B", f"C{OCTAVE + 1}"]
 
         dictValue = 0
-        while dictValue < 12:
+        while dictValue < 10:
             for dictKey in noteDictKeyList:
                 noteDict[dictKey] = noteDictValueList[dictValue] + f"{OCTAVE}"
                 dictValue += 1
@@ -56,11 +56,12 @@ def on_press(key):
 
         print(f"Octave +{OCTAVE}")
         
-        noteDictValueList = ["C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B", f"C{OCTAVE}"]
+        noteDictValueList = ["C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B", f"C{OCTAVE + 1}"]
 
         dictValue = 0
-        while dictValue < 12:
+        while dictValue < 10:
             for dictKey in noteDictKeyList:
+                print(dictValue)
                 noteDict[dictKey] = noteDictValueList[dictValue] + f"{OCTAVE}"
                 dictValue += 1
 
