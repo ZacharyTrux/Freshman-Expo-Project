@@ -1,27 +1,22 @@
-import RPi.GPIO as GPIO
+import time
+from machine import Pin, PWM
 
-MIN_DUTY = 5
-MAX_DUTY = 10
+motor1 = PWM(Pin(18))
+motor1.freq(1000)
 
-servo_signal_pin = 13
+switch1 = Pin(1, Pin.IN, Pin.PULL_UP)
 
-def deg_to_duty(deg):
-    return (deg - 0) * (MAX_DUTY - MIN_DUTY) / 180 + MIN_DUTY
+while True:
+    for i in range(0, 65535, 5):
+        pwm1.dutyu16(i)
+        time.sleep(0.001)
 
-if __name__ == "__main__":
-    GPIO.setwarnings(False)
-    GPIO.setmode(GPIO.BCM)
+    print("100%")
+    time.sleep(2)
 
-    GPIO.setup(servo_signal_pin, GPIO.OUT)
-    #set PWM signal to 50Hz
-    servo = GPIO.pwm(servo_signal_pin, 50)
-    servo.start(0)
+    for i in range(65535, 0, 5):
+        pwm1.duty_u16(i)
+        time.sleep(0.001)
 
-    #loops from 0 to 180
-    for deg in range(181):
-        duty_cycle = deg_to_duty(deg)
-        servo.ChangeDutyCycle(duty_cycle)
-
-    #cleanup the gpio pins
-    GPIO.cleanup()
-    #HELLO
+    print("100%")
+    time.sleep(2)
