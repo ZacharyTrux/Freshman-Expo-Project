@@ -26,9 +26,16 @@ class SensoryPianoApp(App):
         Window.size = (1024,600)
         # Loads the kv file which contains all of the buttons, labels, and functions (utilizes kivy lang)
         kv = Builder.load_file("SensoryPiano.kv") 
+        
+        actual_window = kv.get_screen("second")
+        actual_window.ids.octave_text_label.text = "text"
+        #actual_window.ids.octave_text_label.text = "better text"
+        
         return kv
     
 ### MAIN ###
 # Start the app(GUI)
 if __name__ == "__main__":
     SensoryPianoApp().run()
+
+    
