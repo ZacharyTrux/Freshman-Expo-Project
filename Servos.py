@@ -1,7 +1,7 @@
 import time
 from machine import Pin, PWM
 
-motor1 = PWM(Pin(18))
+motor1 = PWM(Pin(13))
 motor1.freq(1000)
 
 switch1 = Pin(1, Pin.IN, Pin.PULL_UP)
