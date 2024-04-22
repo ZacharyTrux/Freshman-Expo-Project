@@ -6,7 +6,7 @@ motor1.freq(1000)
 
 switch1 = Pin(1, Pin.IN, Pin.PULL_UP)
 
-while True:
+while True: #while switch1 == True:
     for i in range(0, 65535, 5):
         pwm1.dutyu16(i)
         time.sleep(0.001)
