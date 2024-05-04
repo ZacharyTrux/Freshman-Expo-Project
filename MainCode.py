@@ -3,15 +3,11 @@
 # Group Members: Justus Blanchard, Grayson Lessard, Alayna Fields, Zachary Truxillo
 ##################################################################################
 ### SETUP ###
-import pygame
 from kivy.app import App
 from kivy.core.window import Window
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.lang import Builder
-import RPi.GPIO as GPIO
-
-GPIO.setmode(GPIO.BCM)
-
+import serial
 
 class StartScreen(Screen):
     pass
@@ -30,24 +26,20 @@ class SensoryPianoApp(App):
         # Loads the kv file which contains all of the buttons, labels, and functions (utilizes kivy lang)
         kv = Builder.load_file("SensoryPiano.kv")
         
-        pins = [x for x in range(0,25+1)]
-        for pin in pins:
-            GPIO.setup(pin,GPIO.IN, pull_up_down.PUD_DOWN)
-            
-        def action(self,pin):
-            if(pin==0):
-                actual_window = kv.get_screen("second")
-                actual_window.ids.octave_text_label.text = "text"
-                
-                
+        actual_window = kv.get_screen("second")
         
-        while(True):
-            for pin in pins:
-                GPIO.add_event_detect(pin,GPIO.RISING, callback=action(pin),bouncetime=300)
-                    
+        Notes = ["C","C#","D","D#","E","F","F#","G","G#","A","A#","C"]
+        keys_dict = {num_keys: Notes[num_keys] for num_keys in range(0,12)}
+        button = whateverthecodeishere
+        
+        def action(self):
+            for num_key,notes in keys_dict:
+                    if(button == num_key):
+                        actual_window.ids.notes_text_label.text = f"{notes}"
+        
+    
       
         
-            return kv
         
         return kv
     
