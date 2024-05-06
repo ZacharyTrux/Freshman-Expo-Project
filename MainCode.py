@@ -40,8 +40,11 @@ class SensoryPianoApp(App):
         # Loads the kv file which contains all of the buttons, labels, and functions (utilizes kivy lang)
         
         actual_window = kv.get_screen("second")
-        button = 
-        self.action(button,actual_window)
+        
+        Notes = ["C","C#","D","D#","E","F","F#","G","G#","A","A#","C"]
+        keys_dict = {num_keys: Notes[num_keys] for num_keys in range(0,12)}
+        button = whateverthecodeishere
+        
         
         
         return kv
