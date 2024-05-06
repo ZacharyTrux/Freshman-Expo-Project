@@ -26,12 +26,11 @@ class WindowManager(ScreenManager):
           
 class SensoryPianoApp(App):
     def action(self, button, window):
-        
         for num_key,notes in keys_dict:
             if(button == num_key):
                 window.ids.notes_text_label.text = f"{notes}"
                 
-             asdasd   
+    print("hello world")
                 
     def build(self):
         # Sets the background of the screen to White 
@@ -40,11 +39,8 @@ class SensoryPianoApp(App):
         # Loads the kv file which contains all of the buttons, labels, and functions (utilizes kivy lang)
         
         actual_window = kv.get_screen("second")
-        
-        Notes = ["C","C#","D","D#","E","F","F#","G","G#","A","A#","C"]
-        keys_dict = {num_keys: Notes[num_keys] for num_keys in range(0,12)}
-        button = whateverthecodeishere
-        
+        button = 
+        self.action(button,actual_window)
         
         
         return kv
