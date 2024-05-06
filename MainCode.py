@@ -9,6 +9,9 @@ from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.lang import Builder
 import serial
 
+Notes = ["C","C#","D","D#","E","F","F#","G","G#","A","A#","C"]
+keys_dict = {num_keys: Notes[num_keys] for num_keys in range(0,12)}
+
 class StartScreen(Screen):
     pass
 
@@ -28,14 +31,12 @@ class SensoryPianoApp(App):
         
         actual_window = kv.get_screen("second")
         
-        Notes = ["C","C#","D","D#","E","F","F#","G","G#","A","A#","C"]
-        keys_dict = {num_keys: Notes[num_keys] for num_keys in range(0,12)}
-        button = whateverthecodeishere
+        button = 
         
-        def action(self):
-            for num_key,notes in keys_dict:
-                    if(button == num_key):
-                        actual_window.ids.notes_text_label.text = f"{notes}"
+        #def action(self):
+        for num_key,notes in keys_dict:
+            if(button == num_key):
+                actual_window.ids.notes_text_label.text = f"{notes}"
         
     
       
