@@ -8,6 +8,10 @@ from kivy.core.window import Window
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.lang import Builder
 import serial
+import pygame
+
+# Initialize pygame.mixer
+pygame.mixer.init()
 
 Notes = ["C4","C#4","D4","D#4","E4","F4","F#4","G4","G#4","A4","A#4","C4"]
 keys_dict = {num_keys: Notes[num_keys] for num_keys in range(0,12)}
@@ -31,9 +35,12 @@ class SensoryPianoApp(App):
     
     #checks for the actions of the buttons pressed through GPIO
     def action(self, button, window):
+        
         for num_key,notes in keys_dict:
             if(button == num_key):
                 window.ids.notes_text_label.text = f"{notes}"
+
+        
                 
     # displayes the window for the entire app                
     def build(self):
