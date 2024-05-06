@@ -30,7 +30,7 @@ class SensoryPianoApp(App):
         
         Notes = ["C","C#","D","D#","E","F","F#","G","G#","A","A#","C"]
         keys_dict = {num_keys: Notes[num_keys] for num_keys in range(0,12)}
-        button = whateverthecodeishere
+        # button = whateverthecodeishere
         
         def action(self):
             for num_key,notes in keys_dict:
