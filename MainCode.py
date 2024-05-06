@@ -25,6 +25,8 @@ class WindowManager(ScreenManager):
     pass
           
 class SensoryPianoApp(App):
+    
+    #checks for the actions of the buttons pressed through GPIO
     def action(self, button, window):
         for num_key,notes in keys_dict:
             if(button == num_key):
@@ -32,6 +34,7 @@ class SensoryPianoApp(App):
                 
     print("hello world")
                 
+    # displayes the window for the entire app                
     def build(self):
         # Sets the background of the screen to White 
         Window.clearcolor = (1,1,1,1)
