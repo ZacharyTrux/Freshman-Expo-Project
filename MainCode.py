@@ -32,11 +32,12 @@ class SensoryPianoApp(App):
         actual_window = kv.get_screen("second")
         
         button = 
+        self.action()
         
-        #def action(self):
-        for num_key,notes in keys_dict:
-            if(button == num_key):
-                actual_window.ids.notes_text_label.text = f"{notes}"
+        def action(self):
+            for num_key,notes in keys_dict:
+                if(button == num_key):
+                    actual_window.ids.notes_text_label.text = f"{notes}"
         
     
       
