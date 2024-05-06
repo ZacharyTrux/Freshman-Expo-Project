@@ -31,6 +31,8 @@ class SensoryPianoApp(App):
             if(button == num_key):
                 window.ids.notes_text_label.text = f"{notes}"
                 
+             asdasd   
+                
     def build(self):
         # Sets the background of the screen to White 
         Window.clearcolor = (1,1,1,1)
