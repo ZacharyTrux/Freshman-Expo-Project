@@ -1,6 +1,9 @@
 from playsound import playsound
 from pynput.keyboard import Key, Listener
 from pynput import keyboard
+import pygame
+
+pygame.mixer.init()
 
 ## CONSTANTS ##
 OCTAVE = 4
@@ -70,7 +73,9 @@ def on_press(key):
 
 
     try:
-        playsound(f'notes/{noteDict[input]}.wav', False)
+        note = pygame.mixer.Sound(f'notes/{noteDict[input]}.wav')
+        print(noteDict[input])
+        print(note) 
     except:
         print("That's not a note!")
 
@@ -82,5 +87,8 @@ def on_release(key):
     
 ##### MAIN #####
 # Collect events until released
-with Listener(on_press=on_press, on_release=on_release) as listener:
-    listener.join()
+listener = keyboard.Listener(on_press=on_press, on_release=on_release)
+listener.start()
+
+while True:
+    pass
