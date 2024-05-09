@@ -37,9 +37,7 @@ pygame.mixer.set_num_channels(13)
 channelDict = {}
 
 for i in range(0, 13):
-    channelDict[f"{i}"] = pygame.mixer.Channel(i)
-
-print(channelDict)
+    channelDict[i] = pygame.mixer.Channel(i)
 
 # Setup note list and key dictionary
 notesList = ["C4", "C#4/Db4", "D4","D#4/Eb4", "E4", "F4", "F#4/Gb4", "G4", "G#4/Ab4", "A4", "A#4/Bb4", "B4", "C5"]
@@ -68,7 +66,7 @@ class SensoryPianoApp(App):
         actual_window = kv.get_screen('second')
 
         # Set the timer for redrawing the screen
-        refreshTime = 0.1
+        refreshTime = 0.02
         Clock.schedule_interval(self.timer, refreshTime)
         
         return kv
@@ -78,11 +76,11 @@ class SensoryPianoApp(App):
     def timer(self, dt):
         global actual_window
 
-        # Get data from serial port
-        receivedData = pico.read_until('\n')
+        # Get data from serial port    
+        receivedData = pico.readline()
         receivedData = receivedData.decode()
         receivedData = receivedData.strip()
-        print(receivedData)
+        # print(receivedData)
         
         # Get button2 input state. If pressed, turn on motor2.
         # If not pressed, turn it off.
@@ -103,19 +101,19 @@ class SensoryPianoApp(App):
             noteFromData = str(keys_dict[buttonNum])
             noteFromData = noteFromData.replace('/', '')
             # print(noteFromData)
-            
-            try:
-                # Play note corresponding to key pressed
-                if channelDict[buttonNum].get_busy() == False:
-                    channelDict[buttonNum].play(f'notes/{noteFromData}.wav')
-                    print("Playing...")
-            except:
-                print("Note already playing!")
 
             actual_window.ids.notes_text_label.text = f"{keys_dict[buttonNum]}"
-            
+
+            # Play note corresponding to key pressed
+            if channelDict[buttonNum].get_busy() == False:
+                noteToPlay = keys_dict[buttonNum]
+                noteToPlay = noteToPlay.replace("/", "")
+                # print(noteToPlay)
+                note = pygame.mixer.Sound(f"notes/{noteToPlay}.wav")
+                channelDict[buttonNum].play(note)
+
         except:
-            actual_window.ids.notes_text_label.text = ''
+            pass
 
 
 ##### MAIN #####
