@@ -4,7 +4,7 @@ import serial
 import pygame
 import RPi.GPIO as GPIO
 
-# KIVY imports
+# Kivy imports
 from kivy.app import App
 from kivy.core.window import Window
 from kivy.uix.screenmanager import ScreenManager, Screen
